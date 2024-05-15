@@ -1,6 +1,6 @@
 import Category from "../Category/Category"
 
-const CategorList = () => {
+const CategoryList = ({contents}:{contents:any}) => {
 
     const Categories = [
         { name: "動物", src: "/images/free/cat.png", href: "/category/animal" },
@@ -10,11 +10,12 @@ const CategorList = () => {
 
     return (
         <div className="flex gap-3 flex-wrap">
-            {Categories.map((category) => (
-                <Category name={category.name} src={category.src} href={category.href} />
+            {contents?.map((category:any) => (
+                <Category name={category.name} src={category.image.url} href={category.engname} />
             ))}
         </div>
     )
+    //console.log(contents)
 }
 
-export default CategorList
+export default CategoryList

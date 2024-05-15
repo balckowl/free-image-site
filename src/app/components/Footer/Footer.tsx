@@ -1,16 +1,20 @@
-import CategorList from "../CategoryList/CategorList"
+import { getCategoryList, getTagList } from "@/libs/microcms"
+import CategorList from "../CategoryList/CategoryList"
 import TagList from "../TagList/TagList"
 
-const Footer = () => {
+const Footer = async () => {
+    const Categories = await getCategoryList()
+    const Tags = await getTagList()
+    console.log(Tags)
     return (
         <div>
             <div className="container mx-auto py-[100px]">
                 <h2 className="font-bold text-[25px] mb-[30px]">キーワードから探す</h2>
                 <div className="mb-[30px]">
-                    <CategorList />
+                    <CategorList contents={Categories.contents}/>
                 </div>
                 <div className="mb-[20px]">
-                    <TagList />
+                    <TagList contents={Tags.contents}/>
                 </div>
                 <div className="h-[200px] w-full bg-[#eee] mb-[20px] flex items-center justify-center">
                     <p>Adsense</p>

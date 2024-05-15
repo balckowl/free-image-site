@@ -37,6 +37,26 @@ export const getList = async (queries?: MicroCMSQueries) => {
  return listData;
 };
 
+//カテゴリ一覧を取得
+export const getCategoryList = async (queries?: MicroCMSQueries) => {
+    const listData = await client.getList<Blog>({
+        endpoint: "categories",
+        queries,
+    });
+
+    return listData;
+};
+
+//タグ一覧を取得
+export const getTagList = async (queries?: MicroCMSQueries) => {
+    const listData = await client.getList<Blog>({
+        endpoint: "tags",
+        queries,
+    });
+
+    return listData;
+};
+
 // // ブログの詳細を取得
 // export const getDetail = async (
 //  contentId: string,

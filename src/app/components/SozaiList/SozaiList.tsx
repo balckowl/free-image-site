@@ -1,6 +1,6 @@
 import SozaiCard from "../SozaiCard/SozaiCard"
 
-const SozaiList = ({ title }: { title: string }) => {
+const SozaiList = ({ title, contents }: { title: string, contents:any }) => {
 
     const Sozaies = [
         { src: "/images/free/cat.png", name: "こっちをじっと見つめる黒猫", href: "/sozai/111" },
@@ -14,8 +14,8 @@ const SozaiList = ({ title }: { title: string }) => {
             <div className="container mx-auto py-[100px]">
                 <h2 className="font-bold text-[25px] mb-[10px]">{title}</h2>
                 <div className="grid grid-cols-3 gap-[100px]">
-                    {Sozaies.map((sozai) => (
-                        <SozaiCard src={sozai.src} name={sozai.name} href={sozai.href} />
+                    {contents.map((sozai:any) => (
+                        <SozaiCard src={sozai.material.url} name={sozai.name} href={sozai.id} />
                     ))}
                 </div>
             </div>

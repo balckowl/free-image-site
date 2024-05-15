@@ -1,6 +1,6 @@
 import Tags from "../Tag/Tag"
 
-const TagList = () => {
+const TagList = ({contents}:{contents:any}) => {
 
     const tags = [
         { name: "ねこ", href: "/tag/cat" },
@@ -10,8 +10,8 @@ const TagList = () => {
 
     return (
         <div className="flex gap-3 flex-wrap">
-            {tags.map((tag) => (
-                <Tags name={tag.name} href={tag.href} />
+            {contents?.map((tag:any) => (
+                <Tags name={tag.name} href={tag.engname} />
             ))}
         </div>
     )
