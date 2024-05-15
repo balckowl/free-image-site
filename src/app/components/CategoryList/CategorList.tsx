@@ -1,30 +1,18 @@
-import Image from "next/image"
+import Category from "../Category/Category"
 
 const CategorList = () => {
+
+    const Categories = [
+        { name: "動物", src: "/images/free/cat.png", href: "/category/animal" },
+        { name: "乗り物", src: "/images/free/car.png", href: "/category/automobile" },
+        { name: "果物", src: "/images/free/lemon.png", href: "/category/lemon" }
+    ]
+
     return (
-        <div className="h-[30%]">
-            <div className="container mx-auto h-full flex items-center">
-                <div className="flex gap-3 flex-wrap">
-                    <div className="border-[1px] px-3 py-2 rounded-[20px] flex items-center gap-2">
-                        <div className="rounded-full border-2">
-                            <Image src="/images/free/cat.png" width={20} height={20} alt="" className="rounded-full" />
-                        </div>
-                        <p>どうぶつ</p>
-                    </div>
-                    <div className="border-[1px] px-3 py-2 rounded-[20px] flex items-center gap-2">
-                        <div className="rounded-full border-2">
-                            <Image src="/images/free/lemon.png" width={20} height={20} alt="" className="rounded-full" />
-                        </div>
-                        <p>くだもの</p>
-                    </div>
-                    <div className="border-[1px] px-3 py-2 rounded-[20px] flex items-center gap-2">
-                        <div className="rounded-full border-2">
-                            <Image src="/images/free/car.png" width={20} height={20} alt="" className="rounded-full" />
-                        </div>
-                        <p>くるま</p>
-                    </div>
-                </div>
-            </div>
+        <div className="flex gap-3 flex-wrap">
+            {Categories.map((category) => (
+                <Category name={category.name} src={category.src} href={category.href} />
+            ))}
         </div>
     )
 }

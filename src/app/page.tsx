@@ -1,14 +1,15 @@
 import Header from "@/app/components/Header/Headar"
 import Hero from "./components/Hero/Hero";
-import ImageList from "./components/ImageList/ImageList";
-import CategorList from "./components/CategoryList/CategorList";
+import SozaiList from "./components/SozaiList/SozaiList";
+import Footer from "./components/Footer/Footer";
 
 export default function Home() {
   return (
     <>
       <Header />
       <Hero/>
-      <ImageList />
+      <SozaiList title="新しいイラスト"/>
+      <Footer />
     </>
   );
 }
